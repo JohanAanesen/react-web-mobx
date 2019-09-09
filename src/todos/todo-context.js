@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { useLocalStore } from "mobx-react-lite";
-import { getTodos } from "./todo-service";
+import { getTodos, deleteTodo } from "./todo-service";
 
 export const todoContext = createContext();
 export const TodoProvider = ({ children }) => {
@@ -25,7 +25,20 @@ export const TodoProvider = ({ children }) => {
 			}
 
 			store.isLoading = false;
-		}
+        },
+        
+        async deleteTodo(id) {
+            store.isLoading = true;
+
+            try {
+                await deleteTodo(id);
+                store.todos = (await getTodos()).data;
+            } catch (e) {
+                alert(e.message);   
+            }
+
+            store.isLoading = false;
+        }
 	}));
 
 	return (

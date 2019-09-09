@@ -1,24 +1,3 @@
 {
-  "todos": [
-    {
-      "id": "1",
-      "title": "cook"
-    },
-    {
-      "id": "1142",
-      "title": "eat"
-    },
-    {
-      "id": "125",
-      "title": "code"
-    },
-    {
-      "id": "18356",
-      "title": "sleep"
-    },
-    {
-      "id": "1214",
-      "title": "løve"
-    }
-  ]
+  "todos": []
 }
